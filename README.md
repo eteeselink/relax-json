@@ -3,6 +3,12 @@ RELAX JSON
 
 A JSON schema language for humans.
 
+NOTE: This is currently just a place to brain dump some ideas. 
+I intend to write a parser for this that converts RELAX JSON to JSON Schema, 
+so that existing tooling can be used to validate a document against a schema.
+
+Until then, the language is already pretty useful for clearly specifying data structures in API docs.
+
 
 Introduction
 ------------
@@ -11,14 +17,14 @@ Inspired by [RELAX NG Compact Syntax](http://www.relaxng.org/compact-tutorial-20
 RELAX JSON compares to [JSON Schema](http://json-schema.org/examples.html) as RELAX NG Compact compares to XML Schema.
 
 One main reason why RELAX JSON being human-friendly is that it, itself, is not JSON. 
-It is an entirely new language.
+It is an entirely new language. 
 
 
 A contrived example
 -------------------
 
-The following is a pretty ridiculous example of what RELAX JSON looks like.
-Readers familiar with JSON, RELAX NG or Regexes should recognize a few things here and there.
+The following is a pretty ridiculous example of a RELAX JSON schema.
+Readers familiar with JSON, RELAX NG or regexes should recognize a few things here and there.
 
     BookLists [
       BookList+
@@ -48,7 +54,13 @@ Readers familiar with JSON, RELAX NG or Regexes should recognize a few things he
       "Hardcover"
     }
 
-This schema is valid for a JSON document such as:
+Please take a breath and notice how much you think you understand of this schema,
+without having seen a single matching JSON document yet.
+
+Indeed, the main design goal of RELAX JSON is that if you think something means something, it does.
+Because of this, RELAX JSON is just as suitable for API documentation as it is for data validation.
+
+Now, to see whether you thought right, here's a JSON document that the `BookLists` type validates:
 
     [
       {
