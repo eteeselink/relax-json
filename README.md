@@ -17,7 +17,8 @@ It is an entirely new language.
 A contrived example
 -------------------
 
-A RELAX JSON specification such as this:
+The following is a pretty ridiculous example of what RELAX JSON looks like.
+Readers familiar with JSON, RELAX NG or Regexes should recognize a few things here and there.
 
     BookLists [
       BookList+
@@ -47,7 +48,7 @@ A RELAX JSON specification such as this:
       "Hardcover"
     }
 
-is valid for a JSON document such as:
+This schema is valid for a JSON document such as:
 
     [
       {
