@@ -100,7 +100,7 @@ Now, to see whether you thought right, here's a JSON document that the `BookList
 
 This example illustrates some notable language features:
 
-* Types precede object key names
+* Types follow object key names
 * Commas or newlines separate object elements
 * Arrays can have mixed types. 
   In the example, `BookLists` is an array that mixes two types: `BookList` and `Store`.
