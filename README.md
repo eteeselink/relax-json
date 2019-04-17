@@ -9,7 +9,6 @@ so that existing tooling can be used to validate a document against a schema.
 
 Until then, the language is already pretty useful for clearly specifying data structures in API docs.
 
-
 Introduction
 ------------
 
@@ -18,6 +17,41 @@ RELAX JSON compares to [JSON Schema](http://json-schema.org/examples.html) as RE
 
 One main reason why RELAX JSON being human-friendly is that it, itself, is not JSON. 
 It is an entirely new language. 
+
+
+Deprecation notice
+------------------
+Seriously, just use TypeScript types already:
+```ts
+type BookLists = Array<BookList | Store>;
+
+type BookList = {
+  books: Book[];
+  owner: string 
+}
+
+type Book = {
+  title:     string
+  subtitle?: string
+  author:    string 
+  ISBN:      string 
+  weight:    number 
+  type:      BookType 
+}
+
+type Store = {
+  name: string
+  url:  string
+}
+
+enum BookType {
+  Paperback,
+  Hardcover
+}
+```
+
+This is eerily similar to the (pre-typescript) stuff written below. There's [quite](https://github.com/lbovet/typson) [some](https://github.com/YousefED/typescript-json-schema) tools that can convert the above to JSON Schema.
+
 
 
 A contrived example
